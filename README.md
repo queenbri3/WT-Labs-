@@ -10,14 +10,17 @@
 | Endpoint to get messages | https://webexapis.com/v1/messages |
 | Endpoint to send message | https://webexapis.com/v1/messages |
 | Required headers | headers = {"Authorization": "Bearer " + accessToken}) |
-| Sample full GET or POST request |  |
+| Sample full GET or POST request |<img width="538" height="423" alt="image" src="https://github.com/user-attachments/assets/6d881aa7-1cf6-474a-9486-61f142d4226e" />
+  |
 ---
 ## Section 2: ISS Current Location API (3 marks)
 | Criteria | Details |
 |---------|---------|
 | API Base URL | http://api.open-notify.org |
 | Endpoint for current ISS location | http://api.open-notify.org/iss-now.json |
-| Sample response format (example JSON) |
+| Sample response format (example JSON) | <img width="459" height="222" alt="image" src="https://github.com/user-attachments/assets/055c968b-4eae-4fd9-89f6-f14df5672379" />
+
+
 ```
 ```
 |
@@ -30,8 +33,10 @@
 | Endpoint for reverse geocoding |http://api.openweathermap.org/geo/1.0/reverse |
 | Authentication method | API key (appid) |
 | Required query parameters | lat, lon, limit, appid |
-| Sample request with latitude/longitude | |
-| Sample JSON response (formatted example) |
+| Sample request with latitude/longitude |<img width="244" height="115" alt="image" src="https://github.com/user-attachments/assets/0913e066-3592-4dc6-9b5c-6b5059ff74e4" />
+ |
+| Sample JSON response (formatted example) | <img width="919" height="267" alt="image" src="https://github.com/user-attachments/assets/0601b386-6b88-43c0-ad05-615608d65e5a" />
+
 ```
 ```
 |
@@ -41,11 +46,13 @@
 |---------|---------|
 | Library used | import time|
 | Function used to convert epoch | time.ctime(epoch)|
-| Sample code to convert timestamp |  timestamp = json_data, ["timestamp"] timeString = time.ctime(timestamp)
+| Sample code to convert timestamp | <img width="285" height="48" alt="image" src="https://github.com/user-attachments/assets/236aa443-8e53-4728-a956-9a232af73d54" />
+
 ```
 ```
 |
-| Output (human-readable time) | `_______________________________` |
+| Output (human-readable time) | <img width="325" height="15" alt="image" src="https://github.com/user-attachments/assets/5dc13097-dfc6-4a3c-b690-786dd1aab4ec" />
+ |
 ---
 ## 🚀 Section 5: Web Architecture & MVC Design Pattern (12 marks)
 ### 🚀 Web Architecture – Client-Server Model
@@ -64,13 +71,21 @@
 ### 🚀 MVC Pattern in Space Bot
 | Component | Description |
 |------------|-------------|
-| **Model** | |
-| **View** | |
-| **Controller** | |
+| **Model** |Holds data and business logic |
+| **View** | Displays information to the user|
+| **Controller** |Handles user input and API interaction |
 #### Example:
-- Model:
-- View:
-- Controller:
+- Model: lat = json_data["iss_position"]["latitude"]
+lng = json_data["iss_position"]["longitude"]
+
+- View: print("Received message:", message)
+print("Sending to Webex:" + responseMessage)
+
+- Controller: if message.find("/") == 0:
+    seconds = int(message[1:])
+    time.sleep(seconds)
+    
+
 ---
 ### 🚀 Notes
 - Use official documentation for accuracy (e.g. developer.webex.com, locationiq.com
