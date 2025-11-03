@@ -59,8 +59,8 @@
 
 ### 🚀 RESTful API Usage
 - The bot communicates with Webex API, ISS location and OpenWeatherMap using HTTP GET and POST
--
--
+- Uses URL endpoints, stateless requests and HTTP verbs
+- APIs return JSON responses that the bot processes
 ### 🚀 MVC Pattern in Space Bot
 | Component | Description |
 |------------|-------------|
