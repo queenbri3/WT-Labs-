@@ -4,7 +4,7 @@
 ## Section 1: Webex Messaging API (7 marks)✅
 | Criteria | Details |
 |---------|---------|
-| API Base URL | `__________https://webexapis.com/v1_____________________` |
+| API Base URL | https://webexapis.com/v1 |
 | Authentication Method | `_______________________________` |
 | Endpoint to list rooms | `_______________________________` |
 | Endpoint to get messages | `_______________________________` |
