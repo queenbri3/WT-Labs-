@@ -6,11 +6,24 @@
 |---------|---------|
 | API Base URL | https://webexapis.com/v1 |
 | Authentication Method | `_______________________________` |
-| Endpoint to list rooms | `_______________________________` |
-| Endpoint to get messages | `_______________________________` |
-| Endpoint to send message | `_______________________________` |
-| Required headers | `_______________________________` |
-| Sample full GET or POST request | `_______________________________` |
+| Endpoint to list rooms | https://webexapis.com/v1/rooms |
+| Endpoint to get messages | https://webexapis.com/v1/messages |
+| Endpoint to send message | https://webexapis.com/v1/messages |
+| Required headers |  |headers = {"Authorization": "Bearer " + accessToken})
+| Sample full GET or POST request | import requests import json
+
+headers = {"Authorization": f"Bearer {accessToken}", "Content-Type": "application/json; charset=utf-8"}
+
+r = requests.get("https://webexapis.com/v1/rooms", headers = {"Authorization": "Bearer " + accessToken})
+
+if not r.status_code == 200:
+    raise Exception ("Incorrect reply from Webex API. Status code: {}. Text: {}".format(r.status_code, r.text))
+
+print("\nList of available rooms:")
+
+rooms = r.json()["items"]
+for room in rooms:
+    print(f"Type: '{room.get('type')}' Name: {room.get('title')}") |
 ---
 ## Section 2: ISS Current Location API (3 marks)
 | Criteria | Details |
